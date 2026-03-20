@@ -1,3 +1,4 @@
+// Task One
 let firstName = document.getElementById("firstName");
 let lastName = document.getElementById("lastName");
 let submitButton = document.getElementById("submitButton");
@@ -24,3 +25,12 @@ submitButton.addEventListener("click", function () {
   alert(`Welcome ${fullName}`);
 
 });
+
+// Task Two
+function calculateTotalCost(Price, quantity, taxRate)
+
+
+// Task Three
+
+
+// Task Four
