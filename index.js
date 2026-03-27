@@ -90,3 +90,34 @@ checkBtn.addEventListener("click", function () {
 });
 
 // Task Four
+const pricesInput = document.getElementById("prices");
+const quantitiesInput = document.getElementById("quantities");
+const taxRatesInput = document.getElementById("taxsRates");
+const discountInput = document.getElementById("discount");
+
+const calculatesBtn = document.getElementById("calculatesBtn");
+const results = document.getElementById("results");
+
+function calculatesTotalCost(prices, quantities, taxRates, discount = 0) {
+
+  if (isNaN(prices) || isNaN(quantities) || isNaN(taxRates) || isNaN(discount)) {
+    return "Invalid input.";
+  }
+
+  let totalCost = ((prices * quantities) - discount) * (1 + taxRates);
+
+  return totalCost.toFixed(2);
+}
+
+calculatesBtn.addEventListener("click", function () {
+
+  let prices = Number(pricesInput.value);
+  let quantities = Number(quantitiesInput.value);
+  let taxRates = Number(taxRatesInput.value);
+
+  let discount = discountInput.value === "" ? 0 : Number(discountInput.value);
+
+  let total = calculatesTotalCost(prices, quantities, taxRates, discount);
+
+  results.textContent = total;
+});
